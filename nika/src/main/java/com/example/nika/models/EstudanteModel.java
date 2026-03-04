@@ -9,9 +9,13 @@ public class EstudanteModel {
 
     @Id //Criar a chave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private Long id;
+    @Column(name = "Nome")
     private String nome;
+    @Column(name = "E-mail")
     private String email;
+    @Column(name = "Idade")
     private Integer idade;
 
     public EstudanteModel(){}
