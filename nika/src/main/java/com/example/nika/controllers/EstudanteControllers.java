@@ -3,6 +3,7 @@ package com.example.nika.controllers;
 import com.example.nika.models.EstudanteModel;
 import com.example.nika.services.EstudanteServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +22,11 @@ public class EstudanteControllers {
     }
 
     @GetMapping
-    public List<EstudanteModel> buscarTodosEstudantes(){
-        return estudanteServices.findAll();
+    public ResponseEntity<List<EstudanteModel>> findAll(){
+
+        List<EstudanteModel> request = estudanteServices.findAll();
+
+        return ResponseEntity.ok().body(request);
     }
 
     @DeleteMapping("/{id}")

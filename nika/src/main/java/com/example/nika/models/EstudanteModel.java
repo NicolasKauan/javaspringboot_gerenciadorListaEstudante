@@ -1,5 +1,6 @@
 package com.example.nika.models;
 
+import com.example.nika.enums.EstudanteEnum;
 import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,6 +18,16 @@ public class EstudanteModel {
     private String email;
     @Column(name = "Idade")
     private Integer idade;
+
+    private EstudanteEnum estudanteEnum;
+
+    public EstudanteEnum getSituacao() {
+        return estudanteEnum;
+    }
+
+    public void setEstudanteEnum(EstudanteEnum situacao) {
+        this.estudanteEnum = situacao;
+    }
 
     public EstudanteModel(){}
 
