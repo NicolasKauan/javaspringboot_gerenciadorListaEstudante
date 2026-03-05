@@ -30,7 +30,7 @@ public class EstudanteControllers {
         estudanteServices.deletarEstudante(id);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Optional<EstudanteModel> buscarPorId(Long id){
         return estudanteServices.buscarPorId(id);
     }
